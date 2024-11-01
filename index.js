@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 import inquirer from `inquirer`;
 import fs from `fs`;
+import path from `path`;
 import generateMarkdown from "./utils/generateMarkdown";
 
 // TODO: Create an array of questions for user input
@@ -40,10 +41,19 @@ const questions = [
         name: `license`,
         message: `Choose a license for your project`,
         choices: [
-            `MIT`,
+            `MIT License`,
             `Apache License 2.0`,
-            `GNU General Public License (GPL) v3`,
+            `GNU General Public License v3.0`,
             `BSD 3-Clause License`,
+            `BSD 2-Clause "Simplified" License`,
+            `Boost Software License 1.0`,
+            `Creative Commons Zero v1.0 Universal`,
+            `Eclipse Public License 2.0`,
+            `GNU Affero General Public License v3.0`,
+            `GNU General Public License v2.0`,
+            `GNU Lesser General Public License v2.1`,
+            `Mozilla Public License 2.0`,
+            `The Unlicense`
         ],
     },
     {
@@ -58,22 +68,15 @@ const questions = [
     },
  ];
  // TODO: Create a function to write README file
-const readmeContent = generateMarkdown(answers);
-
- inquirer.prompt(questions).then((answers) => {
-    console.log(`Your answers:`, answers);
-    fs.writeFile(`README.md`, readmeContent, (err) => {
-            if (err) {
-                console.error(`Error writing to file:`, err);
-                return;
-            }
-            console.log(`README file has been created successfully!`);
-        });
-    }
-)
+ function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(),fileName), data)
+ }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions).then((answers) => {
+        writeToFile(`README-template.md`, generateMarkdown({ ...answers}))
+})}
 
 // Function call to initialize app
 init();
