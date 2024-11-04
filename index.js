@@ -41,7 +41,7 @@ const questions = [
         name: `license`,
         message: `Choose a license for your project`,
         choices: [
-            `MIT_License`,
+            `MIT`,
             `Apache_License_2.0`,
             `GNU_General_Public_License_v3.0`,
             `BSD_3-Clause_License`,
