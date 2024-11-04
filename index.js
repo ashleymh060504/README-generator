@@ -24,7 +24,7 @@ const questions = [
     {
         type: `input`,
         name: `usage`,
-        message: `Provide your usage information`,
+        message: `Provide your usage information:`,
     },
     {
         type: `input`,
@@ -39,7 +39,7 @@ const questions = [
     {
         type: `list`,
         name: `license`,
-        message: `Choose a license for your project`,
+        message: `Choose a license for your project:`,
         choices: [
             `MIT_License`,
             `Apache_License_2.0`,
