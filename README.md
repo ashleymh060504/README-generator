@@ -20,3 +20,5 @@
 
   1. Type the command "node index.js" in order to start the application. 
   2. Answer each of the questions and select the license you are using for your project. Include your GitHub username as well as your email address for others to be able to contact you. A README template will be created that you can further edit should you choose to do so.
+
+  Follow this link for a walkthrough video that demonstrates its functionality: [README Generator Video](https://drive.google.com/file/d/1JM1vTyIJ_yJ4eUqpT2RTf6CukKoZm2-q/view)
